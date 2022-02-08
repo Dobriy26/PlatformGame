@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     public float Speed = 14f;
     public float Assel = 6f;
-
+    public float Jump = 5f;
+    
     private Vector2 _input;
     private Rigidbody2D _rb;
 
@@ -19,7 +20,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         _input.x = Input.GetAxis("Horizontal");
-        _input.y = Input.GetAxis("Jump");
+        _input.y = Input.GetAxis("Vertical");
     }
 
     private void FixedUpdate()
@@ -28,5 +29,10 @@ public class PlayerController : MonoBehaviour
         var _xVelosity = _input.x == 0 ? 0 : _rb.velocity.x;
         _rb.AddForce(new Vector2((_input.x * Speed-_rb.velocity.x) * a, 0));
         _rb.velocity = new Vector2(_xVelosity, _rb.velocity.y);
+        
+        var b = Assel;
+        var _yVelosity = _input.y == 0 ? 0 : _rb.velocity.y;
+        _rb.AddForce(new Vector2(0, (_input.y * Jump-_rb.velocity.y) * a));
+        _rb.velocity = new Vector2(_rb.velocity.x,_yVelosity);
     }
 }
