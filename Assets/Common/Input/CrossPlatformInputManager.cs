@@ -23,7 +23,7 @@ namespace Core.Scripts.Input
 		{
 			s_TouchInput = new MobileInput();
 			s_HardwareInput = new StandaloneInput();
-#if UNITY_EDITOR
+#if MOBILE_INPUT
             activeInput = s_TouchInput;
 #else
 			activeInput = s_HardwareInput;
