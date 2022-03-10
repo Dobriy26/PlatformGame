@@ -9,6 +9,10 @@ namespace Camera
 
         private void FixedUpdate()
         {
+            if (CameraTarget == null)
+            {
+                return;
+            }
             var _newPosition = Vector2.Lerp(transform.position, 
                 CameraTarget.position, Time.deltaTime * CameraSpeed);
             var CameraPosition = new Vector3(_newPosition.x, _newPosition.y, -10);
