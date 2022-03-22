@@ -8,9 +8,11 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody _rigidbody;
     [SerializeField]
-    private float directForce;
+    private float directForce = 0;
     [SerializeField]
     private float turForce;
+    [SerializeField] 
+    private float maxSpeed;
 
     private void Awake()
     {
@@ -20,6 +22,9 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         _rigidbody.AddForce(0, 0, directForce * Time.fixedTime);
+        var velocity = _rigidbody.velocity;
+        _rigidbody.velocity = new Vector3(velocity.x, velocity.y,
+            Math.Min(velocity.z, maxSpeed));
         if (Input.GetKey(KeyCode.D))
         {
             _rigidbody.AddForce(turForce,0,0);
