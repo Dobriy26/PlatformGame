@@ -7,6 +7,6 @@ public class RestartButton : MonoBehaviour
 {
    public void RestartLevel()
    {
-      SceneManager.LoadScene("Runner3D");
+      SceneManager.LoadScene("Runner3D", LoadSceneMode.Additive);
    }
 }

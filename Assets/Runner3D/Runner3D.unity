@@ -820,9 +820,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acaf56741f4ad164db06c922ec17a522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directForce: 50
+  directForce: 30
   turForce: 20
-  maxSpeed: 100
+  maxSpeed: 20
 --- !u!114 &1489169544
 MonoBehaviour:
   m_ObjectHideFlags: 0
