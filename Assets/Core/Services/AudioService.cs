@@ -1,42 +1,82 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Core.Services.Interfaces;
+using Runner3D.Scripts.Service;
 using UnityEngine;
 
-public class AudioService : MonoBehaviour
+namespace Core.Services
 {
-  [SerializeField]
-  private SoundModel[] _sounds;
+    public class AudioService : IAudioService
+    {
 
-  private void Awake()
-  {
-    DontDestroyOnLoad(this);
-    foreach (var sound in _sounds)
-    {
-      sound.source = gameObject.AddComponent<AudioSource>();
-      sound.source.clip = sound.clip;
-      sound.source.volume = sound.volume;
-      sound.source.pitch = sound.pitch;
-      sound.source.loop = sound.loop;
-    }
-  }
+        private bool _mute = false;
+        private readonly Dictionary<string, Sound> _sounds;
+        private float _volume = 1;
+        public AudioService(IEnumerable<Sound> sounds)
+        {
+           
+            _sounds = sounds.ToDictionary(s => s.name);
+            
+        }
+        public void Play(string soundName)
+        {
+            if (_sounds.TryGetValue(soundName, out var sound))
+            {
+                sound.source.Play();
+                return;
+            }
+            Debug.LogWarning($"The sound {soundName} not found");
+        }
 
-  public void PlayMusic(string name)
-  {
-    var sound = _sounds.FirstOrDefault(model => model.name == name);
-    if (sound == null)
-    {
-      Debug.Log($"This sound {name} not found");
-      return;
+        public void Stop(string soundName)
+        {
+            if (_sounds.TryGetValue(soundName, out var sound))
+            {
+                sound.source.Stop();
+                return;
+            }
+            Debug.LogWarning($"The sound {soundName} not found");
+        }
+
+        public float Volume
+        {
+            get => _volume;
+            set
+            {
+                _volume = value;
+                foreach (var kv in _sounds)
+                {
+                    kv.Value.source.volume = _volume;
+                }
+            } 
+        }
+
+        public bool Mute
+        {
+            get => _mute;
+            set
+            {
+                _mute = value;
+                foreach (var sound in _sounds.Values)
+                {
+                    sound.source.Stop();
+                }
+            }
+        }
     }
-    if (sound.source.isPlaying == enabled)
+    [Serializable]
+    public class Sound
     {
-      sound.source.Pause();
+        public string name;
+        public AudioClip clip;
+        [Range(0f, 1f)]
+        public float pitch;
+        public bool loop;
+
+        [HideInInspector]
+        public AudioSource source;
+
+        
     }
-    else
-    {
-      sound.source.Play();
-    }
-  }
 }

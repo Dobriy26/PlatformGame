@@ -33,4 +33,19 @@ public class SaveService : ISaveService
     {
         PlayerPrefs.Save();
     }
+    
+}
+
+public static class SaveServiceExt
+{
+    public static T Load<T>(this ISaveService self)
+    {
+        return self.Load<T>(nameof(T));
+    }
+
+    public static void Write<T>(this ISaveService self, T obj)
+    {
+        self.Write(obj,nameof(T));
+    }
+    
 }

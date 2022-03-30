@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Runner3D/Levels/Runner3D.unity
+    guid: a48ecec1708b5e048a2dd1c9c5d909f2
+  - enabled: 1
+    path: Assets/Runner3D/Levels/Level_1.unity
+    guid: 45a9efa55ee1e0a40b22cd2384c103cf
+  - enabled: 1
+    path: Assets/Runner3D/Levels/Level_2.unity
+    guid: b30b7648dce6d6b4c8f0fae5be8b5b37
+  - enabled: 1
+    path: Assets/Runner3D/Levels/Level_3.unity
+    guid: 44ce5b78571da3e40998d2e98cfbd7eb
+  - enabled: 1
+    path: Assets/Runner3D/Levels/Level_4.unity
+    guid: 08a00f4ecb43d5c43ace6ab42768147c
+  - enabled: 1
+    path: Assets/Runner3D/Levels/Level_5.unity
+    guid: 25e37f321d5d7c74bbe7a96baa271934
   m_configObjects: {}
