@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Common.Scripts.Services.Abstract
+namespace Core.Services.Interfaces
 {
     public interface ISceneService
     {

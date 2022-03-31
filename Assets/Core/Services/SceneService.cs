@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Common.Scripts.Services.Abstract;
+using Core.Services.Interfaces;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

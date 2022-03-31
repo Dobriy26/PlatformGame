@@ -38,6 +38,7 @@ public class SaveService : ISaveService
 
 public static class SaveServiceExt
 {
+    
     public static T Load<T>(this ISaveService self)
     {
         return self.Load<T>(nameof(T));

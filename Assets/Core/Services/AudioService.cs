@@ -15,12 +15,17 @@ namespace Core.Services
         private float _volume = 1;
         public AudioService(IEnumerable<Sound> sounds)
         {
-           
+            foreach (var sound in sounds)
+            {
+                sound.Init();
+            }
             _sounds = sounds.ToDictionary(s => s.name);
             
         }
         public void Play(string soundName)
         {
+            if(_mute)
+                return;
             if (_sounds.TryGetValue(soundName, out var sound))
             {
                 sound.source.Play();
@@ -76,7 +81,10 @@ namespace Core.Services
 
         [HideInInspector]
         public AudioSource source;
-
+        
+        public void Init()
+        {
+        }
         
     }
 }
