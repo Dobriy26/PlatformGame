@@ -17,7 +17,6 @@
 /[Uu]ser[Ss]ettings/
 /[Aa]rtifacts/
 /CodeCoverage/Report/
-/CodeCoverage/Playtika.Unity-opencov/Recording/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -86,9 +85,6 @@ test_resultseditmode.xml
 test_resultsplaymode.xml
 test_resourcevalidator.xml
 
-!Scripts/Playtika.Unity.Internal.Release/Playtika.Unity.Internal.Release.csproj
-Scripts/Playtika.Unity.Internal.Release/bin/
-Scripts/Playtika.Unity.Internal.Release/obj/
 /Assets/**/obj/
 /Assets/**/obj.meta
 /Assets/**/bin/
