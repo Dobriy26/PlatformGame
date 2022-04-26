@@ -22,12 +22,12 @@ public class TouchController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             _touchStart = GetWorldPosition();
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             var direction = _touchStart - GetWorldPosition();
             mainCamera.transform.position += new Vector3(direction.x, 0, 0);

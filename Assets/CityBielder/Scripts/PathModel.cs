@@ -11,7 +11,7 @@ public class PathModel : MonoBehaviour
     private void Awake()
     {
         Ways = new List<(Vector3, Vector3)>();
-        for (int i = 0; i < points.Length; i++)
+        for (int i = 0; i < points.Length-1; i++)
         {
             Ways.Add((points[i].transform.position, points[i+1].transform.position));
         }
