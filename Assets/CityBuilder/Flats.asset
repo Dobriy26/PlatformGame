@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28a1c7d272ab4e3cad202704ceb28e10, type: 3}
+  m_Name: Flats
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 2100000, guid: 51718a10ed04d78488ef170b323b0c59, type: 2}
+  - {fileID: 2100000, guid: af19c034d5cca6542a234e64be4e980a, type: 2}
+  - {fileID: 2100000, guid: 23f343bede491c64ba5c4f108075a9c0, type: 2}
+  - {fileID: 2100000, guid: 5231ec2ea17b1954d842fddc82beec7a, type: 2}
+  - {fileID: 2100000, guid: 301d1511680c4bf45878d5d5c53f52ad, type: 2}
+  - {fileID: 2100000, guid: 867617ed2027c3d469cc31a3cf8b1318, type: 2}
+  meshes:
+  - {fileID: 4300000, guid: ab5c5124ed235c444944366c6246a5c8, type: 3}
+  - {fileID: 4300000, guid: 88d5460d13ae422449302fe21490a188, type: 3}
+  - {fileID: 4300000, guid: 7a419d92594d9f14e9badf1e7306552b, type: 3}
+  - {fileID: 4300000, guid: 93a3feb706b203742957fbf2aeb9f5da, type: 3}
+  - {fileID: 4300000, guid: e21bd742578af2b4ba77b0a202396b08, type: 3}
+  - {fileID: 4300000, guid: a9e9c4958fb59d242bd9a41c87a06486, type: 3}

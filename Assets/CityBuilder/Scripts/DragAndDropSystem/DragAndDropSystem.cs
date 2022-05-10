@@ -27,7 +27,7 @@ namespace CityBuilder.Scripts.DragAndDropSystem
             foreach (var element in drugAndDropElements.Where(element => element))
             {
                 
-                    CheckElement(element);
+                CheckElement(element);
                 
             }
 
@@ -95,7 +95,6 @@ namespace CityBuilder.Scripts.DragAndDropSystem
                 var result = dropTarget.Transform.gameObject.TryGetComponent<DraggableView>(out draggableView);
                 return result && draggableView.IsDraggable;
             }
-        
             draggableView = null;
             return false;
         }
